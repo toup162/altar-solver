@@ -1,70 +1,27 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# altar-solver
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**altar-solver** is a web tool for planning Relic Altar configurations in Path of Exile. It provides a simple interface, modeled as closely as possible to the in-game experience.
 
-### `npm test`
+![local_dem](https://user-images.githubusercontent.com/11641649/211340617-fd204058-5166-4da6-ab4b-76238f7ac4dd.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Problem Statement
+### Relics and the Relic Altar
+In Path of Exile, *Relics* benefit player power. Players are provided an *Altar* (similar to a Backpack) which affords  a limited space to choose Relics from which they want to benefit. Only Relics which are slotted into the Altar provide a benefit to the player.
 
-### `npm run build`
+Relics are randomly dropped items in-game, and appear in seven different forms with varying dimensions (depicted in the demo). Players have to plan their own unique configuration for several reasons, including
+ 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - Relics are randomly acquired. Players' access to Relics will vary.
+ - Players have different goals. A player's goals for their character will dramatically change which Relics they want to utilize in their Altar.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### The Relic Altar minigame, a Bin-packing problem
+The Relic Altar is ostensibly an [Inventory Management Puzzle](https://tvtropes.org/pmwiki/pmwiki.php/Main/InventoryManagementPuzzle) -- or sometimes referred to as "Inventory Tetris".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Players are incentivized to fill the Altar with as many Relics as possible to maximize their benefits. They will have a particular set of Relics they want to use, but it is not immediately clear if it is possible to fit those Relics in the Altar.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The Relic Altar minigame strongly relates to the [Bin-packing problem](https://en.wikipedia.org/wiki/Bin_packing_problem) -- a widely studied NP-hard problem in Computer Science. This project somewhat arbitrarily addresses this problem using a simplified, loose implementation of the [Bansal Packing heuristic](https://www.win.tue.nl/~nikhil/pubs/Bansal-packing.pdf).
