@@ -1,14 +1,57 @@
-.App {
-  text-align: center;
-  background-color: #0c0c0c;
-  color: #fff;
-  min-height: 100vh;
+
+html, body, .App {
+    background-color: #0c0c0c;
+    color: #fff;
 }
 
-.content-container {
-  padding-top: 100px;
+.App {
+    color: #fff;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
+}
+
+.relic-selector-container {
+    border: 1px solid #333;
+    padding: 40px;
+    padding-bottom: 16px;
+}
+
+.relic-selector-container button.relic-button img {
+    pointer-events: none;
+}
+
+.relic-selector-container button.relic-button:hover:not(:disabled) {
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.333);
+    transition: 0.3s;
+}
+
+.relic-selector-container button.relic-button:disabled {
+    cursor: not-allowed;
+}
+
+.relic-selector-container button.relic-button:disabled img {
+    opacity: 0.5;
+}
+
+
+.relic-selector-container .relic-button-container button.relic-button {
+    display: block;
+    padding: 0;
+    background: unset;
+    border-radius: 3px;
+    border: 1px solid rgba(51, 51, 51, 0.333);
+}
+
+.error-container {
+    height: 24px;
+}
+
+.help-text {
+    text-align: center;
+    height: 24px;
+    font-style: italic;
+    color: gray;
 }
