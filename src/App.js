@@ -118,23 +118,25 @@ function App() {
     return (
         <div className="App">
             <div className="container">
-                <div>
-                    <RelicSelector
-                        addRelic={addRelic}
-                        solvedAltar={solvedAltar}
-                        unsuccessfulFitting={unsuccessfulFitting}
-                    />
-                </div>
-                
-                {solvedAltar && (
-                    <div>
-                        <AltarCanvas
-                            fittedRelics={solvedAltar}
-                            removeRelic={removeRelic}
-                            clearInventory={clearInventory}
+                <div className="d-lg-flex align-items-center justify-content-center">
+                    <div className="me-lg-4">
+                        <RelicSelector
+                            addRelic={addRelic}
+                            solvedAltar={solvedAltar}
+                            unsuccessfulFitting={unsuccessfulFitting}
                         />
                     </div>
-                )}
+                    
+                    {solvedAltar && (
+                        <div className="ms-lg-4">
+                            <AltarCanvas
+                                fittedRelics={solvedAltar}
+                                removeRelic={removeRelic}
+                                clearInventory={clearInventory}
+                            />
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );

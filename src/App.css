@@ -55,3 +55,7 @@ html, body, .App {
     font-style: italic;
     color: gray;
 }
+
+.altar-canvas-container {
+    min-width: 284px;
+}

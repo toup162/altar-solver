@@ -121,7 +121,7 @@ const AltarCanvas = props => {
     }, [fittedRelics]);
     
     return (
-        <>
+        <div className="altar-canvas-container">
             <div className="help-text mb-3 pt-1">
                 {fittedRelics?.length > 0 && 
                     <span>Click a Relic to remove it from the altar.</span>
@@ -140,7 +140,7 @@ const AltarCanvas = props => {
                     Clear All
                 </button>
             </div>
-        </>
+        </div>
     );
 }
 
